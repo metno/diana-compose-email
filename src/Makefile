@@ -2,7 +2,7 @@
 CXX = g++
 CXXFLAGS = -Wall -W
 
-CXXFLAGS += $(shell pkg-config --cflags QtGui QtCore)
+CXXFLAGS += -W -Wall -g $(shell pkg-config --cflags QtGui QtCore)
 LIBS      = $(shell pkg-config --libs   QtGui QtCore)
 
 UIC = $(shell pkg-config --variable=uic_location QtGui)
