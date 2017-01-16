@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
     QApplication app(argc, argv);
     const QString locale = QLocale::system().name();
     QTranslator translator;
-    translator.load(QString(":/translations/submit_report_") + locale);
+    translator.load(QString(":/translations/compose_email_") + locale);
     app.installTranslator(&translator);
 
     QString tmpdir, from;
