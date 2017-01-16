@@ -1,3 +1,9 @@
+diana-compose-email (0.3-1) unstable; urgency=low
+
+  * bugfix translation files
+
+ -- Alexander Bürger <alexander.buerger@met.no>  Mon, 16 Jan 2017 15:45:15 +0200
+
 diana-compose-email (0.2-1) unstable; urgency=low
 
   * support for dragging of attachments to other programs
