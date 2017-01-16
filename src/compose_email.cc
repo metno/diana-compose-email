@@ -155,8 +155,7 @@ void MailDialog::accept()
         QByteArray base64array = rawarray.toBase64();
 
         QFileInfo fi(filename);
-        const QString basename = fi.fileName();
-        const char* basenamec = basename.toStdString().c_str();
+        const std::string basename = fi.fileName().toStdString();
 
         const QString suffix = fi.suffix();
         const char* mime;
@@ -170,9 +169,9 @@ void MailDialog::accept()
             mime = "application/octet-stream";
 
         fprintf(sendmail,"--diana_auto_generated\n");
-        fprintf(sendmail,"Content-type: %s; name=\"%s\"\n", mime, basenamec);
+        fprintf(sendmail,"Content-type: %s; name=\"%s\"\n", mime, basename.c_str());
         fprintf(sendmail,"Content-Transfer-Encoding: base64\n");
-        fprintf(sendmail,"Content-Disposition: inline; filename=\"%s\"\n\n", basenamec);
+        fprintf(sendmail,"Content-Disposition: inline; filename=\"%s\"\n\n", basename.c_str());
         //--- the image data ---
         const char *data = base64array.constData();
         fprintf(sendmail,"%s",data);
