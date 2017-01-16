@@ -39,7 +39,9 @@
 #include <QFileInfo>
 #include <QGridLayout>
 #include <QImage>
+#include <QListView>
 #include <QMessageBox>
+#include <QTabWidget>
 #include <QTemporaryFile>
 
 // #define WRITE_TO_FILE
@@ -57,7 +59,7 @@ MailDialog::MailDialog(QWidget* parent)
     : QDialog(parent)
     , from_("diana_noreply@met.no")
 {
-    //--- Create dialog elements ---
+  //--- Create dialog elements ---
     createGridGroupBox();
     buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel);
     //--- Connect buttons to actions ---
@@ -101,12 +103,24 @@ void MailDialog::createGridGroupBox()
     layout->addWidget(eSubjectLabel, 3, 0, Qt::AlignRight);
     layout->addWidget(eSubjectEdit, 3, 1);
     //---
+    QTabWidget* tabs = new QTabWidget(this);
     eTextEdit = new QTextEdit;
-    layout->addWidget(eTextEdit, 4, 0, 1, 2);
+    tabs->addTab(eTextEdit, tr("Message"));
+    attachments_ = new AttachedFilesModel(this);
+    QListView *listView = new QListView(this);
+    listView->setSelectionMode(QAbstractItemView::ExtendedSelection);
+    listView->setDragEnabled(true);
+    listView->setModel(attachments_);
+    tabs->addTab(listView, tr("Attachments"));
+    layout->addWidget(tabs, 4, 0, 1, 2);
     //--- Set layout manager for widget ---
     gridGroupBox->setLayout(layout);
 }
 
+void MailDialog::attach(const QString& filename)
+{
+  attachments_->attach(filename);
+}
 
 //******************************************************************************
 //* Maildialog::accept()
@@ -143,7 +157,8 @@ void MailDialog::accept()
     fprintf(sendmail,"%s\n\n", eTextEdit->toPlainText().toStdString().c_str());
 
     //--- Mail attachments ---
-    Q_FOREACH (const QString& filename, attachments_) {
+    const QStringList& filenames = attachments_->attachments();
+    Q_FOREACH (const QString& filename, filenames) {
         //--- read the image and convert to Base64 byte array ---
         QFile file(filename);
         if (!file.open(QIODevice::ReadOnly)){

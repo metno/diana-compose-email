@@ -4,14 +4,24 @@
 <context>
     <name>MailDialog</name>
     <message>
-        <location filename="compose_email.cc" line="72"/>
+        <location filename="compose_email.cc" line="74"/>
         <source>E-Mail Picture</source>
         <translation>Отправить изображение</translation>
     </message>
     <message>
-        <location filename="compose_email.cc" line="86"/>
+        <location filename="compose_email.cc" line="88"/>
         <source>E-Mail Details</source>
         <translation>Детали отправки</translation>
+    </message>
+    <message>
+        <location filename="compose_email.cc" line="108"/>
+        <source>Message</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="compose_email.cc" line="114"/>
+        <source>Attachments</source>
+        <translation></translation>
     </message>
     <message>
         <location filename="compose_email.cc" line="142"/>

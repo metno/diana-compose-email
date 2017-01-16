@@ -17,7 +17,7 @@ QMFILES = $(LANGUAGES:%=compose_email_%.qm)
 
 ICONS = #do-not-send.svg send-mail.svg icon-crash.svg
 
-OBJECTS = main.o compose_email.o compose_email_rcc.o compose_email_moc.o
+OBJECTS = main.o compose_email.o attached_files_model.o compose_email_rcc.o compose_email_moc.o
 
 DCE = diana_compose_email
 
@@ -37,10 +37,10 @@ $(DCE): $(OBJECTS)
 compose_email_rcc.cc: compose_email.qrc $(ICONS) $(QMFILES)
 	$(RCC) -o $@ $<
 
-compose_email_moc.cc: compose_email.h #ui_compose_email.h
+compose_email_moc.cc: compose_email.h attached_files_model.h #ui_compose_email.h
 	$(MOC) -o$@ $<
 
-lupdate $(TSFILES): main.cc compose_email.cc # compose_email.ui
+lupdate $(TSFILES): main.cc compose_email.cc attached_files_model.cc # compose_email.ui
 	$(LUP) $^ -ts $(TSFILES)
 
 $(QMFILES): %.qm: %.ts

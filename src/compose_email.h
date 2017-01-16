@@ -29,6 +29,8 @@
 #ifndef _maildialog_h
 #define _maildialog_h
 
+#include "attached_files_model.h"
+
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QGroupBox>
@@ -50,8 +52,7 @@ public:
   void setFrom(const QString& from)
     { from_ = from; }
 
-  void attach(const QString& filename)
-    { attachments_ << filename; }
+  void attach(const QString& filename);
 
 private:
  void createGridGroupBox();
@@ -72,7 +73,7 @@ private:
   QAction *exitAction;
 
   QString from_;
-  QStringList attachments_;
+  AttachedFilesModel* attachments_;
 };
 
 #endif

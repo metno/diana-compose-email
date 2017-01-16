@@ -4,14 +4,24 @@
 <context>
     <name>MailDialog</name>
     <message>
-        <location filename="compose_email.cc" line="72"/>
+        <location filename="compose_email.cc" line="74"/>
         <source>E-Mail Picture</source>
         <translation>Skicka bild som epost</translation>
     </message>
     <message>
-        <location filename="compose_email.cc" line="86"/>
+        <location filename="compose_email.cc" line="88"/>
         <source>E-Mail Details</source>
         <translation>Epostdetaljer</translation>
+    </message>
+    <message>
+        <location filename="compose_email.cc" line="108"/>
+        <source>Message</source>
+        <translation>Melding</translation>
+    </message>
+    <message>
+        <location filename="compose_email.cc" line="114"/>
+        <source>Attachments</source>
+        <translation>Vedlegg</translation>
     </message>
     <message>
         <location filename="compose_email.cc" line="142"/>
