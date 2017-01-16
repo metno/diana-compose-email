@@ -13,5 +13,15 @@
         <source>E-Mail Details</source>
         <translation>Enviar detalles por correo electrónico</translation>
     </message>
+    <message>
+        <location filename="compose_email.cc" line="142"/>
+        <source>Cannot send mail</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="compose_email.cc" line="142"/>
+        <source>Unable to start sendmail program.</source>
+        <translation></translation>
+    </message>
 </context>
 </TS>

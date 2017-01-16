@@ -124,6 +124,11 @@ void MailDialog::accept()
     FILE* sendmail = popen("/usr/lib/sendmail -t", "w");
 #endif
 
+    if (!sendmail) {
+      QMessageBox::critical(this, tr("Cannot send mail"), tr("Unable to start sendmail program."));
+      return;
+    }
+
     //--- Mail header ---
     fprintf(sendmail,"MIME-Version: 1.0\n");
     fprintf(sendmail,"From: %s\n", from_.toStdString().c_str());
