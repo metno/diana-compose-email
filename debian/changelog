@@ -1,3 +1,9 @@
+diana-compose-email (0.4-1) unstable; urgency=low
+
+  * CMake build, manpage, icon
+
+ -- Alexander Bürger <alexander.buerger@met.no>  Tue, 17 Jan 2017 14:15:16 +0200
+
 diana-compose-email (0.3-1) unstable; urgency=low
 
   * bugfix translation files
