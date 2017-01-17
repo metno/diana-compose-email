@@ -72,6 +72,7 @@ MailDialog::MailDialog(QWidget* parent)
     setLayout(mainLayout);
     //--- Set dialog title ---
     setWindowTitle(tr("E-Mail Picture"));
+    setWindowIcon(QIcon(":/icons/compose-email.svg"));
 }
 
 //******************************************************************************

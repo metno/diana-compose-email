@@ -8,3 +8,4 @@
 /debian/diana-compose-email.debhelper.log
 /debian/diana-compose-email.substvars
 /debian/files
+/obj-x86_64-linux-gnu/

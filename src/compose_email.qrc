@@ -1,9 +1,7 @@
 <RCC>
-  <!--qresource prefix="icons">
-    <file>send-mail.svg</file>
-    <file>do-not-send.svg</file>
-    <file>icon-crash.svg</file>
-  </qresource-->
+  <qresource prefix="icons">
+    <file>compose-email.svg</file>
+  </qresource>
   <qresource prefix="translations">
     <file>compose_email_de.qm</file>
     <file>compose_email_es.qm</file>
