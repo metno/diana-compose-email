@@ -14,17 +14,21 @@ SET(CE_MOC_HDRS
 )
 QT4_WRAP_CPP(CE_MOC_SRCS ${CE_MOC_HDRS})
 
-QT4_ADD_RESOURCES(CE_QRC_SRCS compose_email.qrc)
-
-#QT4_WRAP_UI(CE_UI_HEADERS ${CE_UIS})
-
-QT4_ADD_TRANSLATION(CE_QM
+SET(CE_TRANSLATIONS
   compose_email_de.ts
   compose_email_es.ts
   compose_email_nb.ts
   compose_email_ru.ts
   compose_email_sv.ts
 )
+QT4_ADD_TRANSLATION(CE_QM ${CE_TRANSLATIONS})
+
+SET(CE_RESOURCES compose_email.qrc)
+SET(CE_GEN_RESOURCES compose_email_generated.qrc)
+CONFIGURE_FILE(${CE_GEN_RESOURCES} ${CE_GEN_RESOURCES} COPYONLY)
+qt4_add_resources(CE_QRC_SRCS ${CE_RESOURCES} ${CMAKE_CURRENT_BINARY_DIR}/${CE_RESOURCES})
+
+#QT4_WRAP_UI(CE_UI_HEADERS ${CE_UIS})
 
 ADD_EXECUTABLE(diana_compose_email
   ${CE_SRCS}
