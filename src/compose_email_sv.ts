@@ -16,17 +16,17 @@
     <message>
         <location filename="compose_email.cc" line="92"/>
         <source>To:</source>
-        <translation>Til:</translation>
+        <translation>Till:</translation>
     </message>
     <message>
         <location filename="compose_email.cc" line="97"/>
         <source>Cc:</source>
-        <translation>Kopi:</translation>
+        <translation>Kopia:</translation>
     </message>
     <message>
         <location filename="compose_email.cc" line="102"/>
         <source>Subject:</source>
-        <translation>Emne:</translation>
+        <translation>Ämne:</translation>
     </message>
     <message>
         <location filename="compose_email.cc" line="109"/>
