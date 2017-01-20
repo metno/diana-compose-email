@@ -1,3 +1,9 @@
+diana-compose-email (0.7-1) unstable; urgency=low
+
+  * translation updates
+
+ -- Alexander Bürger <alexander.buerger@met.no>  Fri, 20 Jan 2017 08:09:10 +0100
+
 diana-compose-email (0.6-1) unstable; urgency=low
 
   * cmake build problems
