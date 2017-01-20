@@ -2,17 +2,29 @@
 #include "compose_email.h"
 
 #include <QApplication>
+#include <QLibraryInfo>
 #include <QLocale>
 #include <QProcess>
 #include <QTranslator>
 
+static void installTranslator(QApplication* app, const QString& file, const QString& path)
+{
+  const QLocale& locale = QLocale::system();
+  QTranslator* translator = new QTranslator(app);
+  if (translator->load(locale, file, "_", path)) {
+    app->installTranslator(translator);
+  } else if (translator->load(path + "/" + file + "_" + locale.name())) {
+    app->installTranslator(translator);
+  } else {
+    delete translator;
+  }
+}
+
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
-    const QString locale = QLocale::system().name();
-    QTranslator translator;
-    translator.load(QString(":/translations/compose_email_") + locale);
-    app.installTranslator(&translator);
+    installTranslator(&app, "compose_email", ":/translations");
+    installTranslator(&app, "qt", QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 
     QString tmpdir, from;
 

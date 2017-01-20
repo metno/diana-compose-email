@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="sv_SE">
+<TS version="2.0" language="sv">
 <context>
     <name>MailDialog</name>
     <message>
@@ -9,29 +9,44 @@
         <translation>Skicka bild som epost</translation>
     </message>
     <message>
-        <location filename="compose_email.cc" line="88"/>
+        <location filename="compose_email.cc" line="89"/>
         <source>E-Mail Details</source>
         <translation>Epostdetaljer</translation>
     </message>
     <message>
-        <location filename="compose_email.cc" line="108"/>
+        <location filename="compose_email.cc" line="92"/>
+        <source>To:</source>
+        <translation>Til:</translation>
+    </message>
+    <message>
+        <location filename="compose_email.cc" line="97"/>
+        <source>Cc:</source>
+        <translation>Kopi:</translation>
+    </message>
+    <message>
+        <location filename="compose_email.cc" line="102"/>
+        <source>Subject:</source>
+        <translation>Emne:</translation>
+    </message>
+    <message>
+        <location filename="compose_email.cc" line="109"/>
         <source>Message</source>
-        <translation>Melding</translation>
+        <translation>Meddelande</translation>
     </message>
     <message>
-        <location filename="compose_email.cc" line="114"/>
+        <location filename="compose_email.cc" line="115"/>
         <source>Attachments</source>
-        <translation>Vedlegg</translation>
+        <translation>Bilaga</translation>
     </message>
     <message>
-        <location filename="compose_email.cc" line="142"/>
+        <location filename="compose_email.cc" line="143"/>
         <source>Cannot send mail</source>
-        <translation>Kan ikke sende epost</translation>
+        <translation>Kan inte sända epost</translation>
     </message>
     <message>
-        <location filename="compose_email.cc" line="142"/>
+        <location filename="compose_email.cc" line="143"/>
         <source>Unable to start sendmail program.</source>
-        <translation>Kan ikke starte sendmail programmet.</translation>
+        <translation>Kan inte starta sendmail programmet.</translation>
     </message>
 </context>
 </TS>
