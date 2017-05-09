@@ -4,7 +4,7 @@ Section: misc
 Priority: extra
 Standards-Version: 3.9.6
 Build-Depends: debhelper (>= 9), cmake,
- libqt4-dev, libqt4-dev-bin | qt4-qmake
+ qtbase5-dev, qtbase5-dev-tools, qttools5-dev-tools
 
 Package: diana-compose-email
 Architecture: any

@@ -1,3 +1,9 @@
+diana-compose-email (0.8-2) unstable; urgency=low
+
+  * build-depend on qt5 packages
+
+ -- Alexander Bürger <alexander.buerger@met.no>  Tue, 09 May 2017 08:09:10 +0200
+
 diana-compose-email (0.8-1) unstable; urgency=low
 
   * use qt5
