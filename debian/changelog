@@ -1,3 +1,9 @@
+diana-compose-email (0.8-3) unstable; urgency=low
+
+  * build-depend update for bionic
+
+ -- Alexander Bürger <alexander.buerger@met.no>  Wed, 28 Nov 2018 08:00:08 +0100
+
 diana-compose-email (0.8-2) unstable; urgency=low
 
   * build-depend on qt5 packages
